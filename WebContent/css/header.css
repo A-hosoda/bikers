@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+
+
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding:0;
+	margin:0;
+	background-color: black;
+	color: white;
+	font-size:1.5em;
+	z-index: 10;
+	
+}
+
+header #text{
+	padding:0;
+	margin:0 15px 0 0;
+	float:right;
+}
+header .headerlogo{
+	height:80px;
+	margin-left:15px;
+	float:left;
+}
+header .welcome{
+	display: inline-block;
+	margin:0px;
+	padding: 0.8em;
+	text-indent: 5em;
+}
+
+a.headerBtn {
+display: inline-block;
+position: relative;
+margin:0px;
+padding: 0.8em;
+text-align: center;
+text-decoration: none;
+color: #fff;
+border:1px solid black;
+background: black;
+overflow: hidden;
+line-height:1em;
+z-index: 1 !important;
+}
+a.headerBtn:after {
+content:"";
+position: absolute;
+top: 50%;
+left: 50%;
+height: 0;
+width: 100%;
+background : #fff;
+opacity: 0;
+transform: translateX(-50%) translateY(-50%) rotate(45deg);
+transition: 0.3s;
+z-index: -1;
+}
+a.headerBtn:hover {
+color: #ff8000;
+}
+a.headerBtn:hover:after {
+height: 250%;
+opacity: 1;
+}
+a.headerBtn:active:after {
+height: 350%;
+opacity: 1;
+}

@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color:black;
+	font-family: "Sawarabi Gothic";
+}
+
+#wrapper {
+	position: absolute;
+	top: 100vh;
+	left: 10%;
+	width: 80%;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 1em;
+	z-index: 3;
+}
+
+.logo{
+	position:absolute;
+	top:15%;
+	left:30%;
+	width:40%;
+	z-index: 4;
+}
+
+#wrapper h2{
+	margin:2em;
+	border-bottom:2px solid black;
+	letter-spacing: 10px;
+	line-height:1em;
+}
+
+#wrapper h2 .initialBox{
+	font-size:2em;
+	background-color:black;
+	padding-left:10px;
+	padding-bottom:0px;
+	margin-bottom:0px;
+	margin-right:0.2em;
+	color:#ff8000;
+}
+.error {
+	color: red;
+}
+/* グーグルマップ */
+#map {
+	margin: 10px auto;
+	border-radius: 1em;
+	height: 600px;
+	width: 90%;
+	background-color: grey;
+}
+
+/* 背景動画設定-------------------------- */
+.covervid-wrapper {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.covervid-video {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+/* 動画の粗さをごまかすためにストライプを入れる */
+.pattern {
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/150309231545.png");
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+/* 背景動画設定　終了-------------------------- */
+
+/* Newイベントボタン設定*/
+.newIventBox {
+	position: relative;
+	display:block;
+	margin:10px auto;
+	width:70%;
+	border-radius: 1em 0 1em 0;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #ff8000;
+	background: rgba(200, 255, 255, 0.5);
+	border:1px solid #ff8000;
+	overflow: hidden;
+}
+.newIventBox:before {
+	content:"";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 100%;
+	background : rgba(0, 0, 255, 0.3);
+	transition: .4s;
+}
+.newIventBox:hover:before {
+	left:0;
+}
+.iventTitle{
+	border-bottom:2px dashed #ff8000;
+	border-left:10px solid #ff8000;
+	font-weight:bold;
+	overflow:hidden;
+	text-indent: 5em;
+	line-height:10px;
+}
+.ivent{
+	letter-spacing: 10px;
+	text-align:left;
+	float:left;
+}
+.date{
+	text-align:right;
+}

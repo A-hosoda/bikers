@@ -1,0 +1,138 @@
+@CHARSET "UTF-8";
+
+body {
+	background: url(../img/backgroundImg.jpg) no-repeat fixed;
+	background-size: 100% auto;
+	font-family: "Sawarabi Gothic";
+}
+
+#mainBox {
+	margin: 10% 10% 30px;
+	background: url(../img/formImg.jpg) no-repeat fixed;
+	width: 80%;
+	overflow: hidden;
+}
+
+.error {
+	text-align: center;
+	color: red;
+}
+
+#titleBox h2 {
+	margin: 2em;
+	border-bottom: 2px solid black;
+	letter-spacing: 10px;
+	line-height: 1em;
+}
+
+#titleBox h2::first-letter {
+	font-size: 2em;
+	background-color: black;
+	padding-left: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	margin-right: 0.2em;
+	color: #ff8000;
+}
+
+#formBox {
+	text-align: center;
+	margin:60px;
+}
+
+#formBox table{
+	text-align: left; 
+}
+
+#completeBox{
+	text-align: center;
+	margin:150px 60px;
+}
+
+.submitBtn {
+	display: inline-block;
+	font-size: 14pt;
+	text-align: center; 
+	cursor: pointer; 
+	padding: 12px 12px; 
+	background: #000000;
+	color: #ff8000; 
+	line-height: 1em; 
+	transition: .3s; 
+	box-shadow: 6px 6px 3px #666666; 
+	border: 2px solid #ff8000;
+}
+
+.submitBtn:hover {
+	box-shadow: none; 
+	color: #ffffff;
+	background: #ff8000;
+}
+
+/* --------USER CREATE用 -------------------------*/
+#UserCreateConfirmAction table{
+	margin:30px auto;
+}
+
+#UserCreateConfirmAction #submitBox{
+	width:100%;
+	margin:30px;
+	text-align: center; 
+}
+
+#formBox table{
+	margin:30px auto;
+}
+
+/*------------------- MYPAGE用---------------------- */
+#mainBox .IventBox {
+	position: relative;
+	display:block;
+	margin:10px auto;
+	width:70%;
+	border-radius: 1em 0 1em 0;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #ff8000;
+	background: rgba(200, 255, 255, 0.5);
+	border:1px solid #ff8000;
+	overflow: hidden;
+}
+#mainBox .IventBox:before {
+	content:"";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 100%;
+	background : rgba(0, 0, 255, 0.3);
+	transition: .4s;
+}
+#mainBox .IventBox:hover:before {
+	left:0;
+}
+#mainBox .iventTitle{
+	border-bottom:2px dashed #ff8000;
+	border-left:10px solid #ff8000;
+	font-weight:bold;
+	overflow:hidden;
+	text-indent: 5em;
+	line-height:10px;
+}
+#mainBox .ivent{
+	letter-spacing: 10px;
+	text-align:left;
+	float:left;
+}
+#mainBox .date{
+	text-align:right;
+}
+
+/* -----------SEARCH用----------------- */
+.searchBox{
+	border:3px dashed #ff8000;
+	margin:30px;
+	padding-bottom:20px;
+}
+

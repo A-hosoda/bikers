@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode" value="true" />
+	<package name="com.hosoda.internous.action" extends="struts-default">
+
+		<action name="HomeAction" class="com.hosoda.internous.action.HomeAction"
+			method="execute">
+			<result name="success">Home.jsp</result>
+		</action>
+
+		<action name="GoHomeAction" class="com.hosoda.internous.action.GoHomeAction"
+			method="execute">
+			<result name="success">Home.jsp</result>
+		</action>
+
+		<action name="LoginAction" class="com.hosoda.internous.action.LoginAction"
+			method="execute">
+			<result name="success">login.jsp</result>
+		</action>
+
+		<action name="LoginCompleteAction" class="com.hosoda.internous.action.LoginCompleteAction"
+			method="execute">
+			<result name="success">loginComplete.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="UserCreateAction" class="com.hosoda.internous.action.UserCreateAction"
+			method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction"
+			class="com.hosoda.internous.action.UserCreateConfirmAction" method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateCompleteAction"
+			class="com.hosoda.internous.action.UserCreateCompleteAction" method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="IventAction" class="com.hosoda.internous.action.IventAction"
+			method="execute">
+			<result name="success">ivent.jsp</result>
+		</action>
+
+		<action name="SankaAction" class="com.hosoda.internous.action.SankaAction"
+			method="execute">
+			<result name="success">participation.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="UserPageAction" class="com.hosoda.internous.action.UserPageAction"
+			method="execute">
+			<result name="success">userPage.jsp</result>
+		</action>
+
+		<action name="SearchAction" class="com.hosoda.internous.action.SearchAction"
+			method="execute">
+			<result name="success">search.jsp</result>
+		</action>
+
+		<action name="SearchConfirmAction" class="com.hosoda.internous.action.SearchConfirmAction"
+			method="execute">
+			<result name="success">searchConfirm.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="RindoAction" class="com.hosoda.internous.action.RindoAction"
+			method="execute">
+			<result name="success">rindo.jsp</result>
+		</action>
+
+		<action name="MyPageAction" class="com.hosoda.internous.action.MyPageAction"
+			method="execute">
+			<result name="success">myPage.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="IventCreateAction" class="com.hosoda.internous.action.IventCreateAction"
+			method="execute">
+			<result name="success">iventCreate.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="IventConfirmAction" class="com.hosoda.internous.action.IventConfirmAction"
+			method="execute">
+			<result name="success">iventConfirm.jsp</result>
+			<result name="error">iventCreate.jsp</result>
+		</action>
+
+		<action name="IventCompleteAction" class="com.hosoda.internous.action.IventCompleteAction"
+			method="execute">
+			<result name="success">iventComplete.jsp</result>
+		</action>
+
+		<action name="RindoCreateAction" class="com.hosoda.internous.action.RindoCreateAction"
+			method="execute">
+			<result name="success">rindoCreate.jsp</result>
+		</action>
+
+<!-- 		<action name="RindoCompleteAction" class="com.hosoda.internous.action.RindoCompleteAction" -->
+<!-- 			method="execute"> -->
+<!-- 			<result name="success">rindoComplete.jsp</result> -->
+<!-- 			<result name="error">rindoCreate.jsp</result> -->
+<!-- 		</action> -->
+		
+		<action name="RindoCompleteAction" class="com.hosoda.internous.action.RindoCompleteAction"
+			method="execute">
+			<result name="success">rindoComplete.jsp</result>
+		</action>
+
+		<action name="RindoConfirmAction" class="com.hosoda.internous.action.RindoConfirmAction">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2097152</param>
+                <param name="allowedTypes">
+                    image/png,image/gif,image/jpeg,image/pjpeg
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success">rindoConfirm.jsp</result>
+            <result name="error">rindoCreate.jsp</result>
+        </action>
+        
+        <action name="LogoutAction" class="com.hosoda.internous.action.LogoutAction"
+			method="execute">
+			<result name="success">logout.jsp</result>
+		</action>
+		
+		<action name="CheckAction" class="com.hosoda.internous.action.CheckAction"
+			method="execute">
+			<result name="success">check.jsp</result>
+		</action>
+
+	</package>
+</struts>
