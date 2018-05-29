@@ -19,6 +19,7 @@ public class IventDTO {
 	private String participant3="";
 	private int participant3_id;
 	private String createDate;
+	private String rindoImg;
 	public int getId() {
 		return id;
 	}
@@ -120,6 +121,12 @@ public class IventDTO {
 	}
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
+	}
+	public String getRindoImg() {
+		return rindoImg;
+	}
+	public void setRindoImg(String rindoImg) {
+		this.rindoImg = rindoImg;
 	}
 	
 	

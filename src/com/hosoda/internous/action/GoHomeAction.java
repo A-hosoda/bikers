@@ -8,6 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.hosoda.internous.dao.NewIventDAO;
 import com.hosoda.internous.dao.RindoAllDAO;
+import com.hosoda.internous.dao.SearchDAO;
 import com.hosoda.internous.dto.IventDTO;
 import com.hosoda.internous.dto.RindoDTO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -27,6 +28,14 @@ public class GoHomeAction extends ActionSupport implements SessionAware {
 
 		newIventDTOList = newIventDAO.getNewIvent();
 		rindoAllDTOList = rindoAllDAO.getAllRindo();
+		
+		SearchDAO searchDAO = new SearchDAO();
+		List<RindoDTO> getImgDTO = new ArrayList<>();
+		for(int i=0; i < newIventDTOList.size();i++){
+			getImgDTO = searchDAO.getRindoInfo("", "", 0, newIventDTOList.get(i).getRindo_id());
+			newIventDTOList.get(i).setRindoImg(getImgDTO.get(0).getImg1());
+		}
+		
 		session.put("newIventDTOList", newIventDTOList);
 		session.put("rindoAllDTOList", rindoAllDTOList);
 

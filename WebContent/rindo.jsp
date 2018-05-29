@@ -49,7 +49,7 @@
 				
 		<!-- 		画像 -->
 				<s:if test="!(session.rindoDTO.getImg1().equals(null))">
-					<img src="uploadImg/<s:property value="session.rindoDTO.getImg1()"/>"
+					<img src="img/<s:property value="session.rindoDTO.getImg1()"/>"
 						width="auto" height="400" />
 				</s:if>
 		<!-- 		画像終了 -->

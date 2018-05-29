@@ -123,7 +123,7 @@
 						result += '☆☆☆';
 					}
 					if (img1 != "") {
-						result += '<br><img src="uploadImg/ImageName" width="150" />';
+						result += '<br><img src="img/ImageName" width="150" />';
 						result = result.replace('ImageName', img1);
 					} else {
 						result += '<br>画像はありません';
@@ -146,10 +146,20 @@
 							<p class="date">開催日時：<s:property value="iventDate" /></p>
 						</div>
 						<span class="centerText"></span>
-						<br> 林道：
-						<s:property value="rindoName" />
-						<br> 開催者：
-						<s:property value="sponsor" />
+						<div class="btnImg">
+							<s:if test="<s:property value='rindoImg'/>.equals('')">画像なし</s:if>
+							<s:else>
+								<img src="img/<s:property value="rindoImg"/>" alt="林道画像" width="300px" />
+							</s:else>
+						</div>
+						<div class="btnText"/>
+							林道：
+							<s:property value="rindoName" />
+							<br> 開催者：
+							<s:property value="sponsor" />
+							<br>
+							参加者：<s:property value='currentPeople'/>/<s:property value='maxPeople'/>
+						</div>
 				</a>
 
 			</s:iterator>

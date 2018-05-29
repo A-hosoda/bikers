@@ -135,4 +135,31 @@ body {
 	margin:30px;
 	padding-bottom:20px;
 }
-
+/* --------Ivent用----------------------- */
+#rindoImgBox{
+	float:left;
+	width:60%;
+	margin-bottom:30px;
+}
+#rindoImgBox img{
+	width:100%;
+}
+#iventTextBox{
+	width:35%;
+	float:right;
+	text-align:left;
+	background: rgba(255, 255, 255, 0.5);
+	
+}
+#entoryUserBox{
+	width:35%;
+	float:right;
+	background: rgba(255, 255, 255, 0.5);
+	overflow:hidden;
+}
+#entoryBox{
+	width:35%;
+	float:right;
+	background: rgba(255, 255, 255, 0.5);
+	overflow:hidden;
+}

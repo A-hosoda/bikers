@@ -87,7 +87,8 @@ body{
 	width:70%;
 	border-radius: 1em 0 1em 0;
 	padding: 0.8em;
-	text-align: center;
+	text-align: left;
+	vertical-align:middle;
 	text-decoration: none;
 	color: #ff8000;
 	background: rgba(200, 255, 255, 0.5);
@@ -122,4 +123,11 @@ body{
 }
 .date{
 	text-align:right;
+}
+.newIventBox .btnImg{
+	float:left;
+	margin:20px 80px 10px 80px;
+}
+.newIventBox .btnText{
+	margin:30px;
 }

@@ -68,7 +68,7 @@ public class RindoConfirmAction extends ActionSupport implements SessionAware {
 				result = ERROR;
 			} else {
 
-				String filePath = ServletActionContext.getServletContext().getRealPath("/").concat("uploadImg");
+				String filePath = ServletActionContext.getServletContext().getRealPath("/").concat("img");
 
 				File fileToCreate = new File(filePath, img1FileName);
 

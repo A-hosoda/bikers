@@ -8,6 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.hosoda.internous.dao.NewIventDAO;
 import com.hosoda.internous.dao.RindoAllDAO;
+import com.hosoda.internous.dao.SearchDAO;
 import com.hosoda.internous.dto.IventDTO;
 import com.hosoda.internous.dto.RindoDTO;
 import com.hosoda.internous.dto.UserDTO;
@@ -19,6 +20,7 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	private UserDTO loginDTO = new UserDTO();
 	private NewIventDAO newIventDAO = new NewIventDAO();
 	private RindoAllDAO rindoAllDAO = new RindoAllDAO();
+	private SearchDAO searchDAO = new SearchDAO();
 	private ArrayList<IventDTO> newIventDTOList = new ArrayList<>();
 	private List<RindoDTO> rindoAllDTOList = new ArrayList<>();
 
@@ -26,8 +28,14 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		loginDTO.setUserName("ゲスト");
 		loginDTO.setId(-1);
 		session.put("loginDTO", loginDTO);
-		newIventDTOList = newIventDAO.getNewIvent();
 		rindoAllDTOList = rindoAllDAO.getAllRindo();
+		newIventDTOList = newIventDAO.getNewIvent();
+		
+		List<RindoDTO> getImgDTO = new ArrayList<>();
+		for(int i=0; i < newIventDTOList.size();i++){
+			getImgDTO = searchDAO.getRindoInfo("", "", 0, newIventDTOList.get(i).getRindo_id());
+			newIventDTOList.get(i).setRindoImg(getImgDTO.get(0).getImg1());
+		}
 		
 		session.put("newIventDTOList", newIventDTOList);
 		session.put("rindoAllDTOList", rindoAllDTOList);
@@ -81,6 +89,14 @@ public class HomeAction extends ActionSupport implements SessionAware {
 
 	public void setRindoAllDTOList(List<RindoDTO> rindoAllDTOList) {
 		this.rindoAllDTOList = rindoAllDTOList;
+	}
+
+	public SearchDAO getSearchDAO() {
+		return searchDAO;
+	}
+
+	public void setSearchDAO(SearchDAO searchDAO) {
+		this.searchDAO = searchDAO;
 	}
 	
 	
