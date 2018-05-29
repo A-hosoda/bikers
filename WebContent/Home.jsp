@@ -136,7 +136,8 @@
 				google.maps.event.addDomListener(window, 'load', map_canvas);
 			</script>
 			<!--     --------------------------------------------- -->
-			<h2><span class="initialBox">N</span>ew Ivent</h2>
+			<h2><span class="initialBox">N</span>ew Ivent　(新着5件のイベント)</h2>
+			
 			<s:iterator value="#session.newIventDTOList">
 			
 				<a href='<s:url action="IventAction"><s:param name="id" value="id"/></s:url>' class="newIventBox">

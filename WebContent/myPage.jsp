@@ -19,6 +19,7 @@
 			<h2>MYPAGE</h2>
 		</div>
 		<div id="formBox">
+			<s:if test="!(session.loginDTO.getImg().equals(null))"><img src="uploadImg/<s:property value="session.loginDTO.getImg()"/>" width="auto" height="100" /></s:if>
 			<table>
 				<tr>
 					<td>ユーザー名:</td>
@@ -35,7 +36,7 @@
 		
 				<tr>
 					<td>所持バイク1:</td>
-					<s:if test="session.loginDTO.getBike1().equals(null)">
+					<s:if test="!(session.loginDTO.getBike1().equals())">
 						<td>登録なし</td>
 					</s:if>
 					<s:else>
@@ -104,6 +105,7 @@
 		
 			<a href="<s:url action='IventCreateAction'/>" class="submitBtn">イベント作成</a>
 			<a href="<s:url action='RindoCreateAction'/>" class="submitBtn">林道の追加</a>
+			<a href="<s:url action='UserUpdateAction'/>" class="submitBtn">登録内容変更</a>
 			</div>
 		</div>
 </body>

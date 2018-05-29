@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.hosoda.internous.dao.LoginDAO;
 import com.hosoda.internous.dao.SearchDAO;
 import com.hosoda.internous.dto.IventDTO;
 import com.hosoda.internous.dto.UserDTO;
@@ -33,6 +34,10 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 		SearchDAO dao = new SearchDAO();
 
 		UserDTO loginDTO = (UserDTO) session.get("loginDTO");
+		//LoginDTOを更新する
+		LoginDAO loginDAO = new LoginDAO();
+		loginDTO = loginDAO.getLoginUserInfo(loginDTO.getUserName(), loginDTO.getUserPassword());
+		
 		myIventDTOList = dao.getMyIvent(loginDTO.getUserName());
 		// 未達成のイベントと終了しているイベントを開催日時と現在の日時で判定する。
 		Date today = new Date();
@@ -50,6 +55,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 				e.printStackTrace();
 			}
 		}
+		session.put("loginDTO",loginDTO);
 		session.put("notAchievedIventList", notAchievedIventList);
 		session.put("oldIventList", oldIventList);
 		

@@ -83,6 +83,22 @@
 			<result name="success">myPage.jsp</result>
 			<result name="error">error.jsp</result>
 		</action>
+		
+		<action name="UserUpdateAction" class="com.hosoda.internous.action.UserUpdateAction"
+			method="execute">
+			<result name="success">userUpdate.jsp</result>
+		</action>
+		
+		<action name="UserUpdateConfirmAction" class="com.hosoda.internous.action.UserUpdateConfirmAction"
+			method="execute">
+			<result name="success">userUpdateConfirm.jsp</result>
+			<result name="error">userUpdate.jsp</result>
+		</action>
+		
+		<action name="UserUpdateCompleteAction" class="com.hosoda.internous.action.UserUpdateCompleteAction"
+			method="execute">
+			<result name="success">userUpdateComplete.jsp</result>
+		</action>
 
 		<action name="IventCreateAction" class="com.hosoda.internous.action.IventCreateAction"
 			method="execute">
