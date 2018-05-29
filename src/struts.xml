@@ -154,6 +154,11 @@
 			method="execute">
 			<result name="success">check.jsp</result>
 		</action>
+		
+		<action name="SiteExplanationAction" class="com.hosoda.internous.action.SiteExplanationAction"
+			method="execute">
+			<result name="success">siteExplanation.jsp</result>
+		</action>
 
 	</package>
 </struts>

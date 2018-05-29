@@ -23,6 +23,7 @@
 			 </s:else>
 			 <a href="<s:url action='UserCreateAction'/>" class="headerBtn">USER CREATE</a>
 			 <a href="<s:url action='SearchAction'/>" class="headerBtn">SEARCH</a>
+			 <a href="<s:url action='SiteExplanationAction'/>" class="headerBtn">？</a>
 		</div>
 	</header>
 
